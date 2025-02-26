@@ -50,17 +50,24 @@ function creandoArreglo() {
         if(isNaN(parseInt(inputDelPrompt)))//Es un texto
         {
             correcto = false;
+            alert('Informacion invalida');
         }
         else//si es numero
         {
             if(inputDelPrompt >= 1 && inputDelPrompt <= 50)
             {
                 correcto = true
-                for(let i = 0; i < inputDelPrompt; i++)\
+                for(let i = 1; i <= inputDelPrompt; i++)
                 {
-                    arregloDeNumeros.push(Math.floor(Math.random() * 100));
+                    arregloDeNumeros.push(i);
                 }
+            }
+            else
+            {
+                alert('El numero debe ser mayor a 0 y menor a 50');
+                correcto = false;
             }
         }
     } while(!correcto);
+    alert('El arreglo creado es: ' + arregloDeNumeros);
 }
