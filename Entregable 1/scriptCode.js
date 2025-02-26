@@ -37,3 +37,30 @@ const creandoObjeto = function() {
 
     alert('El objeto creado es: ' + JSON.stringify(unaPersona));
 }
+
+// Ejemplo con definicion de funcion.
+function creandoArreglo() {
+    let inputDelPrompt = '';
+    const arregloDeNumeros = [];
+    let correcto = false;
+    alert('A continuacion el promopt pedira un numero del 1 al 50 para ' + 
+          'definit el tamaño del arreglo que se creara');
+    do {
+        inputDelPrompt = prompt('Escriba el tamaño del arreglo que se creara');
+        if(isNaN(parseInt(inputDelPrompt)))//Es un texto
+        {
+            correcto = false;
+        }
+        else//si es numero
+        {
+            if(inputDelPrompt >= 1 && inputDelPrompt <= 50)
+            {
+                correcto = true
+                for(let i = 0; i < inputDelPrompt; i++)\
+                {
+                    arregloDeNumeros.push(Math.floor(Math.random() * 100));
+                }
+            }
+        }
+    } while(!correcto);
+}

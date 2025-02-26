@@ -19,6 +19,8 @@ button {
     padding: 10px 20px;
     margin: 5px;
     cursor: pointer;
+    transition-property: background-color; 
+    transition-duration: 500ms; 
 }
 button:hover {
     background-color: #d88315;
