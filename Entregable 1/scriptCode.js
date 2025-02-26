@@ -2,7 +2,7 @@
 function interaccionConCiclo() {
     let inputDelPrompt = '';
     let sumatoria = 0;
-    alert('Aqui incia un ciclo que sumara todos' + 
+    alert('Aqui incia un ciclo que sumara todos ' + 
           'los numeros que se vayan capturando en el prompt ' + 
            'para salir del ciclo escriba "salir" en el prompt');
     do {
