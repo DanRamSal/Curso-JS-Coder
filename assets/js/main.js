@@ -1,5 +1,5 @@
+//Logica para agregar los datos del producto seleccionado a local storage para mostrarlos en pagina de detalle de producto.
 const arregloProds = document.querySelectorAll('.producto');
-
 arregloProds.forEach(function(prod)
 {    
     prod.querySelector('img').addEventListener('click', function(e) {
@@ -23,6 +23,7 @@ document.querySelector('#descProd').innerHTML = localStorage.getItem('descProd')
 catch(e){}
 
 
+//Evento para agregar a carrito en pantalla de detalle de producto. 
 function agregarACarrito()
 {
     const prods = JSON.parse(localStorage.getItem("listaProd") || "[]"); 
