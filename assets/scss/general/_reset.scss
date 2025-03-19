@@ -1,0 +1,46 @@
+@import "../utilidades/variables";
+
+
+/*Estilos aplicados a etiquetas en general*/
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{    
+    height: 100%;
+}
+
+main {
+    background-color: $mi-gris;
+    height: 85vh;
+    overflow: auto;
+}
+
+
+p {
+    padding: 1rem 6rem;
+}
+
+h1{
+    padding:1rem;
+    text-align: center;
+}
+
+ul{
+    list-style: none;
+    padding-left: 0px;
+}
+
+a{
+    text-decoration: none;    
+}
+
+a:link{
+    color:inherit;
+}
+
+footer{
+    width: 100vw;
+}

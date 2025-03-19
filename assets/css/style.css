@@ -1,0 +1,317 @@
+/*Estilos aplicados a etiquetas en general*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+}
+
+main {
+  background-color: #e9ebf0;
+  height: 85vh;
+  overflow: auto;
+}
+
+p {
+  padding: 1rem 6rem;
+}
+
+h1 {
+  padding: 1rem;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link {
+  color: inherit;
+}
+
+footer {
+  width: 100vw;
+}
+
+.minav {
+  background-color: #3273a8;
+  padding: 10px;
+}
+.minav a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+.minav li {
+  padding-left: 10px;
+}
+.minav a:hover {
+  color: orange;
+}
+
+/*Ajuste de color en toggle de menu hamburguesa*/
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navbar-toggler {
+  border-color: white;
+}
+
+/*Secciones del main*/
+.seccionAzul {
+  background-color: #3273a8;
+  margin: 1px 40px;
+}
+.seccionAzul .h2 {
+  padding: 10px;
+  margin: 0;
+}
+
+.seccionAzul * {
+  color: white;
+  text-align: center;
+}
+
+.seccionBlanca {
+  background-color: white;
+  margin: 1px 40px;
+}
+.seccionBlanca .h2 {
+  padding: 10px;
+  margin: 0;
+}
+.seccionBlanca p {
+  padding: 10px;
+}
+.seccionBlanca * {
+  color: #3273a8;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.logo {
+  width: 20rem;
+  height: 16rem;
+}
+
+/*/////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////*/
+/*Estilos para los productos*/
+/*/////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////*/
+.producto {
+  margin: 20px;
+  padding: 5px;
+  display: flex;
+  width: 200px;
+  height: 350px;
+  flex-direction: column;
+  background-color: #e9ebf0;
+  border-radius: 10px;
+}
+.producto p {
+  color: #3273a8;
+  padding: 10px;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.producto img {
+  height: 200px;
+  width: 140px;
+  transition: transform 0.2s;
+}
+.producto img:hover {
+  transform: scale(1.05);
+  opacity: 0.7;
+}
+
+.productos {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.prodTitle {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.detalleProd {
+  text-align: center;
+  padding: 20px;
+  height: 100%;
+  overflow: hidden;
+}
+.detalleProd img {
+  margin: auto;
+}
+.detalleProd p {
+  padding: 10px;
+  font-size: 2rem;
+}
+
+.prodDesc {
+  background-color: #e9ebf0;
+  border-radius: 20px;
+}
+
+/*/////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////*/
+/*Estilos para footer*/
+/*/////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////*/
+.footerClass {
+  background-color: #3273a8;
+  color: white;
+}
+.footerClass a:visited {
+  color: white;
+}
+
+.datosfooter {
+  display: flex;
+  align-items: start;
+}
+.datosfooter div {
+  padding: 15px 15px;
+}
+.datosfooter li :hover {
+  color: orange;
+}
+
+.footerRedes {
+  display: flex;
+  align-items: start;
+}
+.footerRedes li {
+  padding: 0 5px;
+}
+
+.divTexto {
+  background-color: white;
+  margin: 1px 40px;
+}
+.divTexto h1 {
+  padding: 10px;
+  margin: 0;
+}
+.divTexto * {
+  color: #3273a8;
+  text-align: center;
+}
+.divTexto p {
+  padding: 10px;
+}
+
+.miBoton {
+  background-color: #3273a8;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.miBoton:hover {
+  background-color: #3273a8;
+  color: orange;
+}
+
+/*/////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////*/
+/*Seccion de Media Queries*/
+/*/////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////*/
+/*Phone*/
+@media only screen and (max-width: 480px) {
+  .logo {
+    width: 15rem;
+    height: 12rem;
+  }
+  .detalleProd {
+    height: 100%;
+  }
+  .detalleProd img {
+    width: 10rem;
+    height: 15rem;
+  }
+  .detalleProd p {
+    font-size: 1rem;
+  }
+  .divTexto p {
+    padding: 10px;
+  }
+  main {
+    height: 70vh;
+  }
+  footer {
+    position: inherit;
+    bottom: auto;
+  }
+}
+/*Tablet*/
+@media only screen and (min-width: 768px) {
+  .logo {
+    width: 20rem;
+    height: 16rem;
+  }
+  .seccionBlanca p {
+    padding: 10px;
+  }
+  .detalleProd {
+    height: 100%;
+  }
+  .detalleProd img {
+    height: 25rem;
+    width: 17rem;
+  }
+  .detalleProd p {
+    font-size: 2rem;
+  }
+  main {
+    height: 83vh;
+  }
+  footer {
+    position: fixed;
+    bottom: 0;
+    height: 12vh;
+  }
+}
+/*Desktop*/
+@media screen and (min-width: 992px) {
+  .logo {
+    width: 25rem;
+    height: 20rem;
+  }
+  .seccionBlanca p {
+    padding: 10px;
+  }
+  .detalleProd {
+    height: 100%;
+  }
+  .detalleProd img {
+    height: 25rem;
+    width: 17rem;
+  }
+  .detalleProd p {
+    font-size: 2.5rem;
+  }
+  main {
+    height: 80vh;
+  }
+  footer {
+    position: fixed;
+    bottom: 0;
+    height: 14vh;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
