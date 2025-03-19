@@ -39,6 +39,8 @@
                 </li>
               </ul>
             </div>
+            <span class="cantCarrito">0</span>           
+            <a href="#" class="nav-link fa fa-shopping-cart"></a>
           </nav>
     </header>
     <main>
@@ -50,8 +52,8 @@
                             <img class="imgProdDet" src="..\assets\images\Prod3.jpg">
                         </div>
                         <div class="col justify-content-center text-center prodDesc">
-                            <h1>Red eyes B. Dragon</h1>
-                            <p>
+                            <h1 id="titleProd">Red eyes B. Dragon</h1>
+                            <p id="descProd">
                                 A ferocious dragon with a deadly attack. A sinister black dragon with eyes that shine a deep scarlet. 
                                 It furiously spouts black flames that incinerate all things. A ferocious dragon with a deadly attack.     
                             </p>
@@ -62,10 +64,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-6">
-                        <button class="miBoton btn btn-lg">Agregar a carrito</button>
+                        <button onclick="agregarACarrito()" class="miBoton btn btn-lg">Agregar a carrito</button>
                     </div>
                     <div class="col-6">
-                        <button class="btn btn-lg miBoton">Ver stock</button>
+                        <button onclick="mostrarCarrito()"class="btn btn-lg miBoton">Ver stock</button>
                     </div>
                 </div>
             </div>
