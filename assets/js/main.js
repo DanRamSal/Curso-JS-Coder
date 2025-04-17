@@ -32,4 +32,20 @@ function agregarACarrito()
 
     localStorage.setItem("listaProd", JSON.stringify(prods)); 
     document.querySelector('.cantCarrito').innerHTML = JSON.parse(localStorage.getItem("listaProd") || "[]").length;
+
+     // Show popup notification
+     Toastify({
+        text: "Producto agregado al carrito",
+        duration: 3000,
+        close: true,
+        gravity: "top",
+        position: "right",
+        backgroundColor: "#3273a8",
+        offset: {
+            x: 50, 
+            y: 80 
+          },
+        stopOnFocus: true,
+    }).showToast();
 }
+

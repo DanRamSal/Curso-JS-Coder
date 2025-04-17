@@ -220,7 +220,7 @@ footer {
 .miBoton {
   background-color: #3273a8;
   color: white;
-  margin-bottom: 20px;
+  width: 60%;
 }
 
 .miBoton:hover {
