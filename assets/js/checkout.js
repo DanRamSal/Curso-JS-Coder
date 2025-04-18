@@ -101,7 +101,7 @@ function cargarProductos()
     total.innerHTML = "$" + calcTotal().toString();
 }
 
-//Evento para eliminar del carritoen pantalla de checkout. 
+//Evento para eliminar productos del carrito en pantalla de checkout. 
 function eliminarProd(element)
 {
     const elemento = element;
@@ -150,7 +150,7 @@ function calcTotal()
     return total.toFixed(2);
 }
 
-function validarCampos(e){
+function validarCampos(){
     let todoCorrecto = true;
     const campos = document.querySelectorAll('.form-group');    
     campos.forEach( (formgrp) => {
