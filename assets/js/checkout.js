@@ -72,6 +72,7 @@ const masterProd = [
     },
 ];
 
+//Actualizar cantidad en carrito.
 document.querySelector('.cantCarrito').innerHTML = JSON.parse(localStorage.getItem("listaProd") || "[]").length;
 
 cargarProductos();
@@ -93,7 +94,7 @@ function cargarProductos()
                 <p class="descText">${masterSearch.descripcion}</p>
                 <p style="color:green">$${masterSearch.precio}</p>
             </div>
-            <button  class="vw-10 btn miBotoncarrito" onclick='eliminarProd(this)'">Eliminar</button>
+            <button  class="btn miBotoncarrito" onclick='eliminarProd(this)'">Eliminar</button>
         `;
         contenedor.appendChild(div);
     });
@@ -148,4 +149,27 @@ function calcTotal()
         total += masterSearch.precio;
     });
     return total.toFixed(2);
+}
+
+function validarCampos(e){
+    const campos = document.querySelectorAll('.form-control');    
+    campos.forEach( (inp) => {
+        if(inp.value == "")
+        {
+            Toastify({
+                text: "Por favor complete todos los campos" + inp.id,
+                duration: 3000,
+                close: true,
+                gravity: "top",
+                position: "right",
+                backgroundColor: "#3273a8",
+                offset: {
+                    x: 50, 
+                    y: 80 
+                  },
+                stopOnFocus: true,
+            }).showToast();
+        }
+        document.refresh();
+    })
 }

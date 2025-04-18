@@ -82,7 +82,7 @@
                     <label for="phone">Teléfono</label>
                     <input type="tel" id="phone" class="form-control" placeholder="Ingresa tu número de teléfono" required>
                 </div>
-                <button type="submit" data-toggle="modal" data-target="#exampleModal" id="submitShipping" class="miBoton btn mt-4">Confirmar Orden</button>
+                <button type="button" data-toggle="modal" data-target="#exampleModal" class="miBoton btn mt-4">Confirmar Orden</button>
             </form>
         </section>
     </main>
@@ -123,7 +123,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-              <button type="button" class="btn miBoton">Confirmar Orden</button>
+              <button type="button" onclick="validarCampos(this)" class="btn miBoton">Confirmar Orden</button>
             </div>
           </div>
         </div>

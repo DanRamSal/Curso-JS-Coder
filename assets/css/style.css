@@ -123,12 +123,11 @@ footer {
   padding: 5px;
   margin: 5px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   width: 60vw;
   max-width: 1000px;
-  height: 15vw;
-  max-height: 200px;
+  height: 15vh;
   flex-wrap : wrap;
   flex-direction: row;
   background-color: #e9ebf0;
@@ -281,6 +280,14 @@ form .form-group {
   .logo {
     width: 15rem;
     height: 12rem;
+  }
+
+  .productoCheckout {
+    height: 30vh;
+  }
+  
+  .productoCheckout img {
+    height: 15vh;
   }
 
   .carritoNormal {
