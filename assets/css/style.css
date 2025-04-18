@@ -126,16 +126,17 @@ footer {
   justify-content: space-between;
   align-items: center;
   width: 60vw;
+  max-width: 1000px;
   height: 15vw;
-  overflow: hidden;
+  max-height: 200px;
+  flex-wrap : wrap;
   flex-direction: row;
   background-color: #e9ebf0;
   border-radius: 10px;
 }
 
 .productoCheckout img {
-  height: 154px;
-  width: 95px;
+  height: 100%;
 }
 
 .producto p {
@@ -248,12 +249,12 @@ footer {
   color: orange;
 }
 
-.miBotocarrito{
+.miBotoncarrito{
   background-color: #3273a8;
   color: white;
 }
 
-.miBotocarrito:hover {
+.miBotoncarrito:hover {
   background-color: #3273a8;
   color: orange;
 }
@@ -280,6 +281,14 @@ form .form-group {
   .logo {
     width: 15rem;
     height: 12rem;
+  }
+
+  .carritoNormal {
+    display: none;
+  }
+
+  .carritHamb {
+    display: block;
   }
 
   .descText{
@@ -310,6 +319,15 @@ form .form-group {
     width: 20rem;
     height: 16rem;
   }
+
+  .carritoNormal {
+    display: none;
+  }
+
+  .carritHamb {
+    display: block;
+  }
+
   .seccionBlanca p {
     padding: 10px;
   }
@@ -335,6 +353,15 @@ form .form-group {
     width: 25rem;
     height: 20rem;
   }
+
+  .carritoNormal {
+    display: block;
+  }
+
+  .carritoHamb {
+    display: none;
+  }
+
   .seccionBlanca p {
     padding: 10px;
   }

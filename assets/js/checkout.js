@@ -74,25 +74,78 @@ const masterProd = [
 
 document.querySelector('.cantCarrito').innerHTML = JSON.parse(localStorage.getItem("listaProd") || "[]").length;
 
-//Logica para agregar evento de control de direccionado a detalle de producto.
-const arregloProds = document.querySelectorAll('.producto');
-arregloProds.forEach(function(prod)
-{    
-    prod.querySelector('img').addEventListener('click', function(e) {
-        var elemento = e.target;
-        var parentDiv = elemento.parentElement.parentElement;
-        var titleP = parentDiv.querySelectorAll('p')[0];
+cargarProductos();
 
-        const producto = masterProd.find((d) => d.nombre == titleP.innerHTML)
+//Carga inicial de items del carrito.
+function cargarProductos()
+{
+    const contenedor = document.querySelector('#prodsCarrito');
+    const prodsDelCarrito = JSON.parse(localStorage.getItem("listaProd") || "[]"); 
+    prodsDelCarrito.forEach(function(prod) {
+        const div = document.createElement('div');
+        const masterSearch = masterProd.find(p => p.nombre === prod.nombre);
+        if (!masterSearch) return; // Si no se encuentra el producto, no hacer nada
+        div.classList.add('productoCheckout');
+        div.innerHTML = `
+            <img  src="${masterSearch.imagen}" alt="${masterSearch.nombre}">
+            <div class="w-50">
+                <h3 >${masterSearch.nombre}</h3>
+                <p class="descText">${masterSearch.descripcion}</p>
+                <p style="color:green">$${masterSearch.precio}</p>
+            </div>
+            <button  class="vw-10 btn miBotoncarrito" onclick='eliminarProd(this)'">Eliminar</button>
+        `;
+        contenedor.appendChild(div);
+    });
+    const total = document.querySelector('#totalPrecios');
+    total.innerHTML = "$" + calcTotal().toString();
+}
 
-        if (!producto) {
-            console.error("Producto no encontrado en el base de datos.");
-            return;
-        }
-        
-        localStorage.setItem('imgProd', producto.imagen);
-        localStorage.setItem('titleProd', producto.nombre);
-        localStorage.setItem('descProd', producto.descripcion);
-        localStorage.setItem('precio', producto.precio);
-        });
-});
+//Evento para eliminar del carritoen pantalla de checkout. 
+function eliminarProd(element)
+{
+    const elemento = element;
+    elemento.parentElement.remove();
+    const prods = JSON.parse(localStorage.getItem("listaProd") || "[]"); 
+    const divPadre = elemento.parentElement;
+    const nommbreSel = divPadre.querySelector('h3').innerHTML;
+    const indexOfRemovedIndex = prods.findIndex(prod => prod.nombre === nommbreSel);
+
+    if (indexOfRemovedIndex !== -1) {
+        prods.splice(indexOfRemovedIndex, 1); // Eliminar el producto del carrito
+    }
+
+    localStorage.setItem("listaProd", JSON.stringify(prods)); 
+    document.querySelector('.cantCarrito').innerHTML = JSON.parse(localStorage.getItem("listaProd") || "[]").length;
+
+     //Mensaje de toastify para confirmacion.
+     Toastify({
+        text: "Producto eliminado del carrito",
+        duration: 3000,
+        close: true,
+        gravity: "top",
+        position: "right",
+        backgroundColor: "#3273a8",
+        offset: {
+            x: 50, 
+            y: 80 
+          },
+        stopOnFocus: true,
+    }).showToast();
+
+    const total = document.querySelector('#totalPrecios');
+    total.innerHTML = "$" + calcTotal().toString();
+}
+
+//Calculo del total del carrito.
+function calcTotal()
+{
+    const prodsDelCarrito = JSON.parse(localStorage.getItem("listaProd") || "[]"); 
+    let total = 0;
+    prodsDelCarrito.forEach(function(prod) {
+        const masterSearch = masterProd.find(p => p.nombre === prod.nombre);
+        if (!masterSearch) return; // Si no se encuentra el producto, no hacer nada
+        total += masterSearch.precio;
+    });
+    return total.toFixed(2);
+}
