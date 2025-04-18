@@ -74,7 +74,6 @@ const masterProd = [
 
 //Actualizar cantidad en carrito.
 document.querySelector('.cantCarrito').innerHTML = JSON.parse(localStorage.getItem("listaProd") || "[]").length;
-
 cargarProductos();
 
 //Carga inicial de items del carrito.
@@ -152,12 +151,16 @@ function calcTotal()
 }
 
 function validarCampos(e){
-    const campos = document.querySelectorAll('.form-control');    
-    campos.forEach( (inp) => {
-        if(inp.value == "")
+    let todoCorrecto = true;
+    const campos = document.querySelectorAll('.form-group');    
+    campos.forEach( (formgrp) => {
+        const inputChild = formgrp.querySelector('input');
+        const labelChild = formgrp.querySelector('label');      
+        if(inputChild.value == "")
         {
+            todoCorrecto = false;
             Toastify({
-                text: "Por favor complete todos los campos" + inp.id,
+                text: "Por favor complete el campo: " + labelChild.innerHTML,
                 duration: 3000,
                 close: true,
                 gravity: "top",
@@ -170,6 +173,34 @@ function validarCampos(e){
                 stopOnFocus: true,
             }).showToast();
         }
-        document.refresh();
-    })
+    });
+
+    if(todoCorrecto === true)
+    {
+        //Simulacion de compra se limpia carrito 
+        localStorage.removeItem('listaProd');
+        document.querySelector('.cantCarrito').innerHTML = JSON.parse(localStorage.getItem("listaProd") || "[]").length;
+        const itemList = document.querySelectorAll('.productoCheckout');
+        const total = document.querySelector('#totalPrecios');
+        
+        campos.forEach((formgrp) => formgrp.querySelector("input").value = "");
+        itemList.forEach(item => item.remove());
+        total.innerHTML = "$" + calcTotal().toString();
+
+        Toastify({
+            text: "Orden de compra generada con exito",
+            duration: 3000,
+            close: true,
+            gravity: "top",
+            position: "right",
+            backgroundColor: '#0B6623',
+            offset: {
+                x: 50, 
+                y: 80 
+              },
+            stopOnFocus: true,
+        }).showToast();
+
+    }
+
 }
