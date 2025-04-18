@@ -118,6 +118,26 @@ footer {
   background-color: #e9ebf0;
   border-radius: 10px;
 }
+
+.productoCheckout {
+  padding: 5px;
+  margin: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60vw;
+  height: 15vw;
+  overflow: hidden;
+  flex-direction: row;
+  background-color: #e9ebf0;
+  border-radius: 10px;
+}
+
+.productoCheckout img {
+  height: 154px;
+  width: 95px;
+}
+
 .producto p {
   color: #3273a8;
   padding: 10px;
@@ -228,6 +248,20 @@ footer {
   color: orange;
 }
 
+.miBotocarrito{
+  background-color: #3273a8;
+  color: white;
+}
+
+.miBotocarrito:hover {
+  background-color: #3273a8;
+  color: orange;
+}
+
+.descText{
+  font-size:1vw;
+}
+
 form {
   max-width: 600px;
   margin: 0 auto;
@@ -246,6 +280,10 @@ form .form-group {
   .logo {
     width: 15rem;
     height: 12rem;
+  }
+
+  .descText{
+    display: none;
   }
 
   .detalleProd img {
@@ -316,5 +354,6 @@ form .form-group {
     height: 14vh;
   }
 }
+
 
 /*# sourceMappingURL=style.css.map */
