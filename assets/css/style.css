@@ -150,7 +150,7 @@ footer {
 .detalleProd {
   text-align: center;
   padding: 20px;
-  height: 100%;
+  height:85vh;
   overflow: hidden;
 }
 .detalleProd img {
@@ -228,6 +228,14 @@ footer {
   color: orange;
 }
 
+form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+form .form-group {
+  margin-bottom: 15px;
+}
+
 /*/////////////////////////////////////////////////////*/
 /*/////////////////////////////////////////////////////*/
 /*Seccion de Media Queries*/
@@ -239,9 +247,7 @@ footer {
     width: 15rem;
     height: 12rem;
   }
-  .detalleProd {
-    height: 100%;
-  }
+
   .detalleProd img {
     width: 10rem;
     height: 15rem;
@@ -269,9 +275,6 @@ footer {
   .seccionBlanca p {
     padding: 10px;
   }
-  .detalleProd {
-    height: 100%;
-  }
   .detalleProd img {
     height: 25rem;
     width: 17rem;
@@ -296,9 +299,6 @@ footer {
   }
   .seccionBlanca p {
     padding: 10px;
-  }
-  .detalleProd {
-    height: 100%;
   }
   .detalleProd img {
     height: 25rem;

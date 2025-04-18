@@ -33,7 +33,7 @@ function agregarACarrito()
     localStorage.setItem("listaProd", JSON.stringify(prods)); 
     document.querySelector('.cantCarrito').innerHTML = JSON.parse(localStorage.getItem("listaProd") || "[]").length;
 
-     // Show popup notification
+     //Mensaje de toastify para confirmacion.
      Toastify({
         text: "Producto agregado al carrito",
         duration: 3000,
